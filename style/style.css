@@ -189,6 +189,74 @@
 }
 
 /* FINAL DE LOS ESTILOS DEL HERO */
+
+/* COMIENZO DE LOS ESTILOS DEL SERVICIOS */
+
+.servicios{
+    width: 100%;
+    background-image: url("../img/background-servicios.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+
+.servicios-h2 {
+    font-size: 75px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.servicios-h3 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.servicios-sub {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.servicios-p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: justify;
+    padding: 30px;
+     
+}
+
+.servicios-img {
+    height: 150px;
+    width: auto;
+    border-style: double;
+}
+
+.servicios-grid > div {
+    background-color: transparent;
+    text-align: center;
+    font-size: auto;
+    height: auto;
+    border-style:groove;
+    border-width: 1em;
+    border-color: #0b90c5;
+}
+   
+
+.servicios-grid {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 20px;
+    background-color: transparent;
+    padding: 30px;
+   }
+   
+   
+
+/* FINAL DE LOS ESTILOS DEL SERVICIOS */
+
+
+
+
 /* COMIENZO DE LOS ESTILOS DEL SOLICITAR TURNO */
 
 .turno {
