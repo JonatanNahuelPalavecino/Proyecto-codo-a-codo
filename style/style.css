@@ -1,302 +1,431 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
-    --azul: #0c374f;
-    --amarillo: #FFE125;
-    --celeste: #2BC4F3;
-    --fondo-uno: #4EB0E4;
-    --fondo-dos: #EDF7FC;
-    --font-oswald: "Oswald", sans-serif;
-    --font-roboto: "Roboto", sans-serif;
-    --font-dancing: "Dancing Script", cursive;
-    --sombra-basica: 0 0 5px black;
+  --azul: #0c374f;
+  --amarillo: #ffe125;
+  --celeste: #2bc4f3;
+  --fondo-uno: #4eb0e4;
+  --fondo-dos: #edf7fc;
+  --font-oswald: "Oswald", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-dancing: "Dancing Script", cursive;
+  --sombra-basica: 0 0 5px black;
 }
 
 /* COMIENZO DE LOS ESTILOS DEL HEADER */
 
 .encabezado {
-    width: 100%;
-    height: 116px;
+  width: 100%;
+  height: 116px;
 }
 
 .encabezado-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--azul);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--azul);
 }
 
 .encabezado-logoBox {
-    display: flex;
-    margin: .5rem;
+  display: flex;
+  margin: 0.5rem;
 }
 
 .encabezado-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .encabezado-titleBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 0 .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 0.5rem;
 }
 
 .encabezado-title {
-    font-family: var(--font-oswald);
-    font-size: 2rem;
-    font-weight: bolder;
-    color: var(--amarillo);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-family: var(--font-oswald);
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--amarillo);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .encabezado-subtitle {
-    font-family: var(--font-dancing);
-    font-size: 1.3rem;
-    font-weight: bolder;
-    color: var(--celeste);
-    margin: 5px 0 0 0;
+  font-family: var(--font-dancing);
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--celeste);
+  margin: 5px 0 0 0;
 }
 
 .encabezado-nav {
-    display: flex;
-    align-items: center;
-    margin: .5rem;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
 }
 
 .encabezado-items {
-    font-family: var(--font-roboto);
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    margin: 0 .5rem;
-    padding: .5rem 1rem;
-    border-radius: 25px;
-    box-shadow: 0 0 0 black, inset 0 0 5px black;
-    transition: all .5s ease-in-out;
+  font-family: var(--font-roboto);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0 0 0 black, inset 0 0 5px black;
+  transition: all 0.5s ease-in-out;
 }
 
 .encabezado-items:hover {
-    box-shadow: 0 1px 5px black;
+  box-shadow: 0 1px 5px black;
 }
 
 .show {
-    position: fixed !important;
-    transform: translateY(0);
-    transition: all .5s ease;
-    z-index: 2;
+  position: fixed !important;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+  z-index: 2;
 }
 
 .hidde {
-    position: fixed !important;
-    transform: translateY(-200px);
-    transition: all .5s ease;
-    z-index: 2;
+  position: fixed !important;
+  transform: translateY(-200px);
+  transition: all 0.5s ease;
+  z-index: 2;
 }
-
 
 /* FINAL DE LOS ESTILOS DEL HEADER */
 /* COMIENZO DE LOS ESTILOS DEL HERO */
 
 .hero {
-    width: 100%;
-    height: 80vh;
+  width: 100%;
+  height: 80vh;
 }
 
 .hero-container {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-box {
-    position: relative;
+  position: relative;
 }
 
 .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-boxText {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-    width: 450px;
-    background-color: rgba(255, 255, 255, .9);
-    border-radius: 25px;
-    box-shadow: var(--sombra-basica);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
-    padding: .5rem 1rem;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 450px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  box-shadow: var(--sombra-basica);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
 }
 
 .hero-text {
-    font-family: var(--font-roboto);
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
+  font-family: var(--font-roboto);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .hero-important {
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    text-shadow: 0px 0px 2px black;
-    color: var(--amarillo);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 2px black;
+  color: var(--amarillo);
 }
 
 .hero-btn {
-    font-family: var(--font-roboto);
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    background-color: var(--celeste);
-    border: none;
-    border-radius: 25px;
-    box-shadow: var(--sombra-basica);
-    padding: .5rem 1rem;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  font-family: var(--font-roboto);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: var(--celeste);
+  border: none;
+  border-radius: 25px;
+  box-shadow: var(--sombra-basica);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .hero-btn:hover {
-    box-shadow: 0 2px 3px black;
-    transform: translateY(-0.1em);
+  box-shadow: 0 2px 3px black;
+  transform: translateY(-0.1em);
 }
 
 .hero-btn:active {
-    box-shadow: inset 0 -1px 4px black;
-    transform: translateY(0em);
+  box-shadow: inset 0 -1px 4px black;
+  transform: translateY(0em);
 }
 
 /* FINAL DE LOS ESTILOS DEL HERO */
 /* COMIENZO DE LOS ESTILOS DEL SOLICITAR TURNO */
 
 .turno {
-    width: 100%;
-    background-color: var(--fondo-dos);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  background-color: var(--fondo-dos);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .turno-title {
-    font-family: var(--font-roboto);
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-style: normal;
-    text-align: center;
-    margin: 2rem 0;
+  font-family: var(--font-roboto);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+  margin: 2rem 0;
 }
 
-.turno-subtitle, .turno-formTitle {
-    font-family: var(--font-oswald);
-    font-size: 1.4rem;
-    letter-spacing: 1px;
+.turno-subtitle,
+.turno-formTitle {
+  font-family: var(--font-oswald);
+  font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
 .turno-form {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
-    justify-items: center;
-    align-items: start;
-    margin: 2rem 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  justify-items: center;
+  align-items: start;
+  margin: 2rem 0;
 }
 
 .turno-formBox {
-    width: 450px;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 450px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .turno-formBox:nth-child(1) {
-    grid-column-start: 1;
-    grid-column-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .turno-formBox:nth-child(2) {
-    grid-column-start: 3;
-    grid-column-end: 5;
+  grid-column-start: 3;
+  grid-column-end: 5;
 }
 
 .turno-box {
-    width: 100%;
-    margin: 1.5rem 0 0;
+  width: 100%;
+  margin: 1.5rem 0 0;
 }
 
 .turno-label {
-    display: none;
+  display: none;
 }
 
-.turno-input, .turno-select {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    box-shadow: inset 0 -1px 4px black;
-    padding: 0 1rem;
-    transition: all 1s ease;
-    font-family: var(--font-roboto);
+.turno-input,
+.turno-select {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  box-shadow: inset 0 -1px 4px black;
+  padding: 0 1rem;
+  transition: all 1s ease;
+  font-family: var(--font-roboto);
 }
 
-.turno-input:focus, .turno-seleect:focus {
-    box-shadow: var(--sombra-basica);
+.turno-input:focus,
+.turno-seleect:focus {
+  box-shadow: var(--sombra-basica);
 }
 
 .turno-btn {
-    font-family: var(--font-roboto);
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    background-color: var(--celeste);
-    border: none;
-    border-radius: 25px;
-    box-shadow: var(--sombra-basica);
-    padding: .5rem 1rem;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-    grid-column-start: 2;
-    grid-column-end: 4;
+  font-family: var(--font-roboto);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: var(--celeste);
+  border: none;
+  border-radius: 25px;
+  box-shadow: var(--sombra-basica);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 
 .turno-btn:hover {
-    box-shadow: 0 2px 3px black;
-    transform: translateY(-0.1em);
+  box-shadow: 0 2px 3px black;
+  transform: translateY(-0.1em);
 }
 
 .turno-btn:active {
-    box-shadow: inset 0 -1px 4px black;
-    transform: translateY(0em);
+  box-shadow: inset 0 -1px 4px black;
+  transform: translateY(0em);
 }
 
 /* FINAL DE LOS ESTILOS DEL SOLICITAR TURNO */
+/*COMIENZO DE LOS ESTILOS DEL CONTACTO*/
 
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
 
+#contacto {
+  padding: 3em;
+  background-color: var(--fondo-dos);
+}
+.contacto-titulo {
+  margin-bottom: 30px;
+  font-family: var(--font-oswald);
+}
+
+.contacto-contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacto-formulario {
+  background-color: var(--azul);
+  border-radius: 30px;
+  width: 50%;
+  padding: 20px;
+}
+
+.contacto-subtitulo {
+  font-family: var(--font-roboto);
+  margin-bottom: 30px;
+}
+
+.subtitulo-form {
+  color: var(--fondo-dos);
+}
+
+.subtitulo-info {
+  color: var(--azul);
+}
+
+.contacto-formulario-label {
+  display: none;
+}
+
+.contacto-formulario-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+.contacto-formulario-item {
+  width: 75%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--celeste);
+  font-size: 1rem;
+  font-family: var(--font-roboto);
+}
+
+.contacto-formulario-item:focus {
+  background-color: var(--fondo-dos);
+  transition: 500ms;
+}
+
+.contacto-formulario-item-textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contacto-formulario-boton {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--amarillo);
+  box-shadow: var(--sombra-basica);
+  cursor: pointer;
+  font-family: var(--font-roboto);
+}
+
+.contacto-formulario-boton:active {
+  background-color: black;
+  color: var(--amarillo);
+}
+
+.contacto-info {
+  padding: 20px;
+}
+
+.contacto-info-contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  gap: 2rem;
+}
+
+.contacto-info-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.contacto-info-item {
+  display: flex;
+  gap: 0.5em;
+  font-family: var(--font-roboto);
+  margin: 1em 0;
+  color: var(--azul);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.contacto-info-simbolo {
+  color: var(--celeste);
+  font-weight: bold;
+}
+
+.contacto-mapa {
+  border-radius: 15px;
+  height: 300px;
+}
+
+/* FINAL DE LOS ESTILOS DEL CONTACTO */

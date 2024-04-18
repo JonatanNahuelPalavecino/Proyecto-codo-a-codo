@@ -7,6 +7,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script defer src="./scripts/carrusel.js"></script>
     <script defer src="./scripts/navBar.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
@@ -139,6 +143,93 @@
         </form>
     </section>
 
+    <section id="contacto">
+        <h1 class="contacto-titulo">Contacto</h1>
+        <div class="contacto-contenedor">
+          <article class="contacto-formulario">
+            <h2 class="contacto-subtitulo subtitulo-form">
+              Si tenes alguna consulta podes dejarnos tus datos y nos
+              contactaremos a la brevedad.
+            </h2>
+            <form action="#" method="get" class="contacto-formulario-form">
+              <label for="nombre" class="contacto-formulario-label">Nombre</label>
+              <input
+                class="contacto-formulario-item"
+                type="text"
+                name="nombre"
+                id="nombre"
+                placeholder="Nombre"
+                required
+              />
+              <label for="telefono" class="contacto-formulario-label"
+                >Teléfono</label
+              >
+              <input
+                class="contacto-formulario-item"
+                type="tel"
+                name="telefono"
+                id="telefono"
+                placeholder="Teléfono"
+                required
+              />
+              <label for="email" class="contacto-formulario-label">Email</label>
+              <input
+                class="contacto-formulario-item"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+              <label for="mensaje" class="contacto-formulario-label"
+                >Mensaje</label
+              >
+              <textarea
+                class="contacto-formulario-item contacto-formulario-item-textarea"
+                name="mensaje"
+                id="mensaje"
+                placeholder="Mensaje"
+                required
+              ></textarea>
+              <button type="submit" class="contacto-formulario-boton">
+                <span>Enviar</span>
+              </button>
+            </form>
+          </article>
+          <article class="contacto-info">
+            <h2 class="contacto-subtitulo subtitulo-info">
+              También podes llamarnos o visitarnos
+            </h2>
+            <div class="contacto-info-contenedor">
+              <ul class="contacto-info-lista">
+                <li class="contacto-info-item">
+                  <span class="material-symbols-outlined contacto-info-simbolo">
+                    call
+                  </span>
+                  <span>+54 9 11 2425 3635</span>
+                </li>
+                <li class="contacto-info-item">
+                  <span class="material-symbols-outlined contacto-info-simbolo">
+                    location_on
+                  </span>
+                  <span
+                    >Avenida Teniente General Donato Álvarez 1050, C1406
+                    CABA</span
+                  >
+                </li>
+              </ul>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102311.52065912614!2d-58.46469524957572!3d-34.61426051139877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca1ea91fd4cf%3A0xbaee7969a08f24df!2sPlaza%20Irlanda!5e0!3m2!1ses-419!2sar!4v1712014162617!5m2!1ses-419!2sar"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="contacto-mapa"
+              ></iframe>
+            </div>
+          </article>
+        </div>
+      </section>
   
 </body>
 </html>
