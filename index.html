@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script defer src="./scripts/carrusel.js"></script>
+    <script defer src="./scripts/navBar.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <title>CODO AIRE - Un lugar Agradable - Servicio de instalación y matenimiento de equipos de aire acondicionado</title>
+</head>
+<body>
+    <header class="encabezado">
+
+        <div id="encabezado" class="encabezado-container">
+
+            <div class="encabezado-logoBox">
+                <img class="encabezado-img" src="./img/logo.png" alt="logo">
+                <div class="encabezado-titleBox">
+                    <p class="encabezado-title">codo aire</p>
+                    <p class="encabezado-subtitle">Un ambiente agradable</p>
+                </div>
+            </div>
+    
+            <nav class="encabezado-nav">
+                <a class="encabezado-items" href="/">home</a>
+                <a class="encabezado-items" href="#nosotros">nosotros</a>
+                <a class="encabezado-items" href="#servicios">servicios</a>
+                <a class="encabezado-items" href="#solicitar-turno">solicitar turno</a>
+                <a class="encabezado-items" href="#contacto">contacto</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section class="hero splide">
+        <div class="hero-container splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide hero-box">
+                    <img class="hero-img" src="./img/slider-one.jpeg" alt="imagen-codo-aire-1">
+                    <div class="hero-boxText">
+                        <span class="hero-text">Servicio integral de <span class="hero-important">aires acondicionados</span></span>
+                        <a class="hero-btn" href="#servicios">ver servicios</a>
+                    </div>
+                </li>
+                <li class="splide__slide hero-box">
+                    <img class="hero-img" src="./img/slider-two.jpeg" alt="imagen-codo-aire-2">
+                    <div class="hero-boxText">
+                        <span class="hero-text">Solicita un turno <span class="hero-important">gratis</span> y resolvemos tus dudas</span>
+                        <a class="hero-btn" href="#solicitar-turno">Solicitar turno</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <section class="turno" id="solicitar-turno">
+
+        <em class="turno-title">Solicita tu turno</em>
+        <p class="turno-subtitle">Elegi el tipo de servicio, fecha y horario para que un tecnico se acerque a tu domicilio.</p>
+
+        <form class="turno-form" action="get">
+
+            <fieldset class="turno-formBox">
+                <p class="turno-formTitle">Ingresa tus datos personales</p>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="name-turno">Nombre</label>
+                    <input class="turno-input" type="text" name="nombre" id="name-turno" placeholder="Nombre" required>
+
+                </div>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="surname-turno">Apellido</label>
+                    <input class="turno-input" type="text" name="apellido" id="surname-turno" placeholder="Apellido" required>
+
+                </div>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="phone-turno">telefono</label>
+                    <input class="turno-input" type="tel" name="telefono" id="phone-turno" placeholder="Teléfono" required>
+
+                </div>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="address-turno">Dirección del domicilio</label>
+                    <input class="turno-input" type="text" name="direccion" id="address-turno" placeholder="Dirección" required>
+
+                </div>
+
+            </fieldset>
+
+            <fieldset class="turno-formBox">
+                <p class="turno-formTitle">Ingresa el turno elegido</p>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="service-turno">¿Que servicio necesitas?</label>
+                    <select class="turno-select" name="service" id="service-turno" required>
+                        <option value="">Seleccione un tipo de servicio</option>
+                        <option value="de 9 a 13hs">servicio 1</option>
+                        <option value="de 14 a 18hs">servicio 2</option>
+                        <option value="de 14 a 18hs">servicio 3</option>
+                        <option value="de 14 a 18hs">servicio 4</option>
+                    </select>
+
+                </div>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="date-turno">Dia del turno</label>
+                    <input class="turno-input" type="date" name="fecha" id="date-turno" required>
+
+                </div>
+
+                <div class="turno-box">
+
+                    <label class="turno-label" for="hour-turno">Horario</label>
+                    <select class="turno-select" name="hour" id="hour-turno" required>
+                        <option value="">Seleccione un rango horario</option>
+                        <option value="de 9 a 13hs">de 9 a 13hs</option>
+                        <option value="de 14 a 18hs">de 14 a 18hs</option>
+                    </select>
+
+                </div>
+
+                
+            </fieldset>
+            <button class="turno-btn" type="submit">Solicitar turno</button>
+        </form>
+    </section>
+
+  
+</body>
+</html>
+
