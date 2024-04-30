@@ -252,30 +252,57 @@ svg.show {
 /* COMIENZO DE LOS ESTILOS DEL NOSOTROS */
 
 #nosotros {
+  
+  width: 100%;
   font-family: var(--font-roboto);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
+  padding: 2.5rem 1rem;
+  margin: 2rem 0;
+  /* padding: 50px; */
+  display: grid;  
+  /* gap: 2em; */
+  /* flex-direction: column; */
+  align-items: center;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  
+  
+}
+
+.nosotros-h2 { 
+  font-family: var(--font-roboto);
+  font-size: 1.3rem;
+  
+
 }
 
 .nosotros-conteiner {
+  margin: 10px 50px 10px 50px;
   display: flex;
   justify-content: space-around;
   padding: 2.3rem 0;
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
+  
+  
+  
 }
 
 .historia-conteiner {
+  margin: 10px 50px 10px 50px;
   display: flex;
   justify-content: space-around;
   padding: 2.3rem 0;
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
+
+  
 }
 
 .crescimiento-conteiner {
+  margin: 10px 50px 10px 50px;
   display: flex;
   justify-content: space-around;
   padding: 2.3rem 0;
@@ -285,21 +312,25 @@ svg.show {
 }
 
 .familia-conteiner {
+  margin: 10px 50px 10px 50px;
   display: flex;
   justify-content: space-around;
   padding: 2.3rem 0;
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
+  
 }
 
 .mission-conteiner {
+  margin: 10px 50px 10px 50px;
   display: flex;
   justify-content: space-around;
   padding: 2.3rem 0;
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
+  
 }
 
 /* FINAL DE LOS ESTILOS DEL NOSOTROS */
@@ -742,6 +773,24 @@ svg.show {
     }
   
     /* FINAL DE LOS ESTILOS DEL HEADER */
+
+
+    /* COMIENZO DE LOS ESTILOS DEL NOSOTROS */
+
+    #nosotros {
+      font-family: var(--font-roboto);
+      font-size: 14px;
+      padding: 1.5rem 1rem;
+      margin: 2rem 0;
+      display: table-row;  
+      gap: 2em;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+
+    /* FINAL DE LOS ESTILOS DEL NOSOTROS */
 
     /* COMIENZO DE LOS ESTILOS DE SOLICITAR TURNO */
 
