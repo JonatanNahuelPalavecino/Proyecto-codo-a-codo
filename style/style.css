@@ -136,7 +136,7 @@
   stroke-width: 3;
   /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line-top-bottom {
@@ -147,7 +147,7 @@ svg.show {
   transform: rotate(-45deg);
 }
 
-.line-top-bottom.show{
+.line-top-bottom.show {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
@@ -160,14 +160,13 @@ svg.show {
   top: 0;
   right: -200px;
   display: none;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: -1;
 }
 
 .aside.show {
   right: 0;
 }
-
 
 /* FINAL DE LOS ESTILOS DEL HEADER */
 /* COMIENZO DE LOS ESTILOS DEL HERO */
@@ -252,28 +251,23 @@ svg.show {
 /* COMIENZO DE LOS ESTILOS DEL NOSOTROS */
 
 #nosotros {
-  
   width: 100%;
   font-family: var(--font-roboto);
   padding: 2.5rem 1rem;
   margin: 2rem 0;
   /* padding: 50px; */
-  display: grid;  
+  display: grid;
   /* gap: 2em; */
   /* flex-direction: column; */
   align-items: center;
 
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
-  
-  
 }
 
-.nosotros-h2 { 
+.nosotros-h2 {
   font-family: var(--font-roboto);
   font-size: 1.3rem;
-  
-
 }
 
 .nosotros-conteiner {
@@ -284,9 +278,6 @@ svg.show {
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
-  
-  
-  
 }
 
 .historia-conteiner {
@@ -297,8 +288,6 @@ svg.show {
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
-
-  
 }
 
 .crescimiento-conteiner {
@@ -319,7 +308,6 @@ svg.show {
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
-  
 }
 
 .mission-conteiner {
@@ -330,7 +318,6 @@ svg.show {
   flex-direction: column;
   gap: 0.5rem;
   text-align: center;
-  
 }
 
 /* FINAL DE LOS ESTILOS DEL NOSOTROS */
@@ -574,7 +561,6 @@ svg.show {
   font-family: var(--font-roboto);
 }
 
-
 .contacto-formulario-item:focus {
   background-color: var(--fondo-dos);
   transition: 500ms;
@@ -583,6 +569,44 @@ svg.show {
 .contacto-formulario-item-textarea {
   height: 100px;
   resize: none;
+}
+
+.contacto-radio-contenedor {
+  border: none;
+  margin-top: 1rem;
+}
+.contacto-radio-contenedor:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.contacto-radio-titulo {
+  font-size: 1.3rem;
+  font-family: var(--font-roboto);
+  color: var(--fondo-dos);
+  margin-bottom: 1rem;
+  font-family: var(--font-roboto);
+}
+
+.contacto-radio-label {
+  color: var(--fondo-dos);
+  font-family: var(--font-roboto);
+  margin-right: 15px;
+}
+
+.contacto-radio {
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--fondo-dos);
+  transition: 0.2s all linear;
+  margin-right: 5px;
+}
+
+.contacto-radio:checked {
+  border: 6px solid var(--celeste);
 }
 
 .contacto-formulario-boton {
@@ -596,6 +620,7 @@ svg.show {
   box-shadow: var(--sombra-basica);
   cursor: pointer;
   font-family: var(--font-roboto);
+  
 }
 
 .contacto-formulario-boton:hover {
@@ -648,7 +673,6 @@ svg.show {
   border-radius: 15px;
   height: 300px;
 }
-
 
 /* FINAL DE LOS ESTILOS DEL CONTACTO */
 /* COMIENZO DE LOS ESTILOS DEL FOOTER */
@@ -745,70 +769,62 @@ svg.show {
 
 /* FINAL DE LOS ESTILOS DEL FOOTER */
 
-
-
-
 /* MEDIA QUERIES */
 
 @media screen and (width <= 1024px) {
-  
-    /* COMIENZO DE LOS ESTILOS DEL HEADER */
+  /* COMIENZO DE LOS ESTILOS DEL HEADER */
 
-    .encabezado-nav {
-      display: none;
-    }
+  .encabezado-nav {
+    display: none;
+  }
 
-    .encabezado-items {
-      margin: 0 .5rem 1rem;
-    }
+  .encabezado-items {
+    margin: 0 0.5rem 1rem;
+  }
 
-    .hamburger {
-      display: block;
-    }
+  .hamburger {
+    display: block;
+  }
 
-    .aside {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  
-    /* FINAL DE LOS ESTILOS DEL HEADER */
+  .aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
+  /* FINAL DE LOS ESTILOS DEL HEADER */
 
-    /* COMIENZO DE LOS ESTILOS DEL NOSOTROS */
+  /* COMIENZO DE LOS ESTILOS DEL NOSOTROS */
 
-    #nosotros {
-      font-family: var(--font-roboto);
-      font-size: 14px;
-      padding: 1.5rem 1rem;
-      margin: 2rem 0;
-      display: table-row;  
-      gap: 2em;
-      flex-direction: column;
-      align-items: center;
-      
-    }
+  #nosotros {
+    font-family: var(--font-roboto);
+    font-size: 14px;
+    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+    display: table-row;
+    gap: 2em;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  /* FINAL DE LOS ESTILOS DEL NOSOTROS */
 
-    /* FINAL DE LOS ESTILOS DEL NOSOTROS */
+  /* COMIENZO DE LOS ESTILOS DE SOLICITAR TURNO */
 
-    /* COMIENZO DE LOS ESTILOS DE SOLICITAR TURNO */
+  .turno-subtitle {
+    text-align: center;
+  }
 
-    .turno-subtitle {
-      text-align: center;
-    }
+  .turno-formBox:nth-child(1),
+  .turno-formBox:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
 
-    .turno-formBox:nth-child(1), .turno-formBox:nth-child(2) {
-      grid-column-start: 2;
-      grid-column-end: 4;
-    }
-  
-    /* FINAL DE LOS ESTILOS DE SOLICITAR TURNO */
-
+  /* FINAL DE LOS ESTILOS DE SOLICITAR TURNO */
 }
 
 @media screen and (max-width: 768px) {
-
   /* COMIENZO DE LOS ESTILOS DE CONTACTO */
 
   .contacto-contenedor {
@@ -857,10 +873,9 @@ svg.show {
 }
 
 @media screen and (max-width: 425px) {
-
   /* COMIENZO DE LOS ESTILOS DE CONTACTO */
 
-  .contacto-formulario-form{
+  .contacto-formulario-form {
     gap: 1em;
   }
   .contacto-formulario-item {
