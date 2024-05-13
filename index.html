@@ -7,27 +7,26 @@
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
     ></script>
     <script defer src="./scripts/carrusel.js"></script>
     <script defer src="./scripts/navBar.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    
-
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <script defer src="./scripts/validacionTurno.js"></script>
     <title>
       CODO AIRE - Un lugar Agradable - Servicio de instalación y matenimiento de
       equipos de aire acondicionado
@@ -55,7 +54,7 @@
         </nav>
 
         <label class="hamburger">
-          <svg viewBox="0 0 32 32">
+          <svg class="svg" viewBox="0 0 32 32">
             <path
               class="line line-top-bottom"
               d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
@@ -293,7 +292,7 @@
         acerque a tu domicilio.
       </p>
 
-      <form class="turno-form" action="get">
+      <form id="turno" class="turno-form">
         <fieldset class="turno-formBox">
           <p class="turno-formTitle">Ingresa tus datos personales</p>
 
@@ -305,7 +304,7 @@
               name="nombre"
               id="name-turno"
               placeholder="Nombre"
-              required
+              
             />
           </div>
 
@@ -317,7 +316,7 @@
               name="apellido"
               id="surname-turno"
               placeholder="Apellido"
-              required
+              
             />
           </div>
 
@@ -329,7 +328,7 @@
               name="telefono"
               id="phone-turno"
               placeholder="Teléfono"
-              required
+              
             />
           </div>
 
@@ -343,7 +342,7 @@
               name="direccion"
               id="address-turno"
               placeholder="Dirección"
-              required
+              
             />
           </div>
         </fieldset>
@@ -359,7 +358,7 @@
               class="turno-select"
               name="service"
               id="service-turno"
-              required
+              
             >
               <option value="">Seleccione un tipo de servicio</option>
               <option value="Instalacion profesional">
@@ -382,13 +381,13 @@
               type="date"
               name="fecha"
               id="date-turno"
-              required
+              
             />
           </div>
 
           <div class="turno-box">
             <label class="turno-label" for="hour-turno">Horario</label>
-            <select class="turno-select" name="hour" id="hour-turno" required>
+            <select class="turno-select" name="hour" id="hour-turno" >
               <option value="">Seleccione un rango horario</option>
               <option value="de 9 a 13hs">de 9 a 13hs</option>
               <option value="de 14 a 18hs">de 14 a 18hs</option>
@@ -398,7 +397,7 @@
         <button class="turno-btn" type="submit">Solicitar turno</button>
       </form>
       <svg
-        style="width: 100%"
+        class="turno-wave"
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -445,7 +444,7 @@
               name="nombre"
               id="nombre"
               placeholder="Nombre"
-              required
+              
             />
             <label for="telefono" class="contacto-formulario-label"
               >Teléfono</label
@@ -456,7 +455,7 @@
               name="telefono"
               id="telefono"
               placeholder="Teléfono"
-              required
+              
             />
             <label for="email" class="contacto-formulario-label">Email</label>
             <input
