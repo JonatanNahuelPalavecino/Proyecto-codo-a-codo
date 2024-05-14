@@ -853,19 +853,6 @@
 
   /* FINAL DE LOS ESTILOS DEL NOSOTROS */
 
-  }
-  
-  @media (max-width: 600px){
-    /*COMIENZO DE LOS ESTILOS DE SERVICIOS*/
-
-    .servicios-grid {
-       grid-template-columns: 1fr;
-     
-   }
-  /* FINAL DE LOS ESTILOS DE SERVICIOS */
-
-
-
   /* COMIENZO DE LOS ESTILOS DE SOLICITAR TURNO */
 
   .turno-subtitle {
@@ -879,6 +866,17 @@
   }
 
   /* FINAL DE LOS ESTILOS DE SOLICITAR TURNO */
+
+  }
+  
+  @media (max-width: 600px){
+    /*COMIENZO DE LOS ESTILOS DE SERVICIOS*/
+
+    .servicios-grid {
+       grid-template-columns: 1fr;
+     
+   }
+  /* FINAL DE LOS ESTILOS DE SERVICIOS */
 }
 
 @media screen and (max-width: 768px) {
