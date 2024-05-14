@@ -11,8 +11,11 @@ const notificar = (mensaje, notificacion) => {
     Toastify({
         text: mensaje,
         duration: 3000,
+        close: true,
         style : {
-            background: notificacion == "error" ? "#ff0000" : "#008000"
+            background: notificacion == "error" ? "#ff0000" : "#008000",
+            borderRadius: "25px",
+            fontFamily: "Roboto, sans-serif"
         }
     }).showToast();
 }
@@ -22,22 +25,22 @@ turno.addEventListener("submit", (e) => {
     
     let validacion = false
 
-    if (nombreInput.value.trim() < 3) {
+    if (nombreInput.value.trim().length < 3) {
         notificar("El nombre debe tener al menos 3 letras", "error")
         return
     }
 
-    if (apellidoInput.value.trim() < 3) {
+    if (apellidoInput.value.trim().length < 3) {
         notificar("El apellido debe tener al menos 3 letras", "error")
         return
     }
 
-    if (telefonoInput.value.trim() < 7) {
+    if (telefonoInput.value.trim().length < 7) {
         notificar("El numero debe tener al menos 8 digitos", "error")
         return
     }
 
-    if (direccionInput.value.trim() < 5) {
+    if (direccionInput.value.trim().length < 5) {
         notificar("La direccion debe tener al menos 5 digitos", "error")
         return
     }
