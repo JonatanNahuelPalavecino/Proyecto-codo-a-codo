@@ -348,14 +348,22 @@ svg.show {
 }
 
 .servicios-h2 {
-  font-size: 75px;
-  text-decoration: underline;
-  margin-bottom: 10px;
+  font-family: var(--font-roboto);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+  margin: 2rem 0;
 }
 
 .servicios-h3 {
-  font-size: 45px;
-  margin-bottom: 20px;
+  font-family: var(--font-roboto);
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  margin: 2rem 0;
 }
 
 .servicios-sub {
@@ -368,7 +376,8 @@ svg.show {
   margin-bottom: 10px;
   text-align: justify;
   padding: 30px;
-}
+
+  }
 
 .servicios-img {
   height: 150px;
@@ -377,13 +386,14 @@ svg.show {
 }
 
 .servicios-grid > div {
-  background-color: transparent;
+  
   text-align: center;
   font-size: auto;
   height: auto;
-  border-style: groove;
-  border-width: 1em;
-  border-color: #0b90c5;
+  border-radius: 25px;
+  background-color: rgba(11, 144, 197, 0.3);
+  box-shadow: -1px 1px 14px 4px black;
+  
 }
 
 .servicios-grid {
@@ -829,11 +839,20 @@ svg.show {
     .p-mission {
       margin: 15px; 
     }
-
-
-
-
   /* FINAL DE LOS ESTILOS DEL NOSOTROS */
+
+  }
+  
+  @media (max-width: 600px){
+    /*COMIENZO DE LOS ESTILOS DE SERVICIOS*/
+
+    .servicios-grid {
+       grid-template-columns: 1fr;
+     
+   }
+  /* FINAL DE LOS ESTILOS DE SERVICIOS */
+
+
 
   /* COMIENZO DE LOS ESTILOS DE SOLICITAR TURNO */
 
