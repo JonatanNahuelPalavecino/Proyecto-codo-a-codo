@@ -23,10 +23,8 @@ const handleScroll = () => {
     const scrollDirection = scrollTop > lastScrollTop && scrollTop > 500 ? 'down' : 'up';
     
     if (scrollDirection === 'down') {
-        encabezado.classList.remove("show");
         encabezado.classList.add("hidde");
     } else {
-        encabezado.classList.add("show");
         encabezado.classList.remove("hidde");
     }
 

@@ -24,7 +24,7 @@
 /* body {
   max-width: 1440px;
   margin: auto;
-} */
+}
 
 /* COMIENZO DE LOS ESTILOS DEL HEADER */
 
@@ -40,9 +40,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--azul);
-}
-
-.encabezado-container.show {
   position: fixed !important;
   transform: translateY(0);
   transition: all 0.5s ease;
@@ -65,6 +62,19 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
+}
+
+.encabezado-img:hover {
+  animation: rotar 1s ease-in-out;
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .encabezado-titleBox {
@@ -121,10 +131,8 @@
   margin: 0.5rem;
 }
 
-.hamburger svg {
-  /* The size of the SVG defines the overall size */
+.svg {
   height: 3em;
-  /* Define the transition for transforming the SVG */
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -134,7 +142,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
-  /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -143,7 +150,7 @@
   stroke-dasharray: 12 63;
 }
 
-svg.show {
+.svg.show {
   transform: rotate(-45deg);
 }
 
@@ -367,8 +374,19 @@ svg.show {
 }
 
 .servicios-sub {
+  width: 600px;
   font-size: 35px;
   margin-bottom: 10px;
+  background-color: transparent;
+  text-align: center;
+  font-size: auto;
+  height: auto;
+  border-style: groove;
+  border-width: 1em;
+  border-color: #0b90c5;
+  border-radius: 25px;
+  background-color: rgba(11, 144, 197, 0.3);
+  box-shadow: -1px 1px 14px 4px black;
 }
 
 .servicios-p {
@@ -385,23 +403,11 @@ svg.show {
   border-style: double;
 }
 
-.servicios-grid > div {
-  
-  text-align: center;
-  font-size: auto;
-  height: auto;
-  border-radius: 25px;
-  background-color: rgba(11, 144, 197, 0.3);
-  box-shadow: -1px 1px 14px 4px black;
-  
-}
 
 .servicios-grid {
-  width: auto;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 20px;
-  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 30px;
 }
 
@@ -438,7 +444,7 @@ svg.show {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(2, auto);
   justify-items: center;
   align-items: start;
   margin: 2rem 0;
@@ -516,6 +522,12 @@ svg.show {
 .turno-btn:active {
   box-shadow: inset 0 -1px 4px black;
   transform: translateY(0em);
+}
+
+.turno-wave {
+  width: 100%;
+  position: relative;
+  top: 4px
 }
 
 /* FINAL DE LOS ESTILOS DEL SOLICITAR TURNO */
@@ -839,6 +851,7 @@ svg.show {
     .p-mission {
       margin: 15px; 
     }
+
   /* FINAL DE LOS ESTILOS DEL NOSOTROS */
 
   }
@@ -870,6 +883,66 @@ svg.show {
 }
 
 @media screen and (max-width: 768px) {
+
+  /* COMIENZO DE LOS ESTILOS DEL HEADER */
+
+  .encabezado {
+    height: 91px;
+  }
+
+  .encabezado-img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .encabezado-title {
+    font-size: 1.8rem;
+  }
+  
+  .encabezado-subtitle {
+    font-size: 1.2rem;
+  }
+
+  /* FINAL DE LOS ESTILOS DEL HEADER */
+  /* COMIENZO DE LOS ESTILOS DEL HERO */
+
+  .hero-boxText {
+    width: 400px;
+  }
+
+  .hero-text {
+    font-size: 1.3rem;
+  }
+
+  .hero-important {
+    font-size: 1.6rem;
+  }
+
+  .hero-btn {
+    font-size: 1.1rem;
+  }
+
+  /* FINAL DE LOS ESTILOS DEL HERO */
+  /* COMIENZO DE LOS ESTILOS DE SOLCITAR TURNO */
+
+  .turno-title {
+    font-size: 1.8rem;
+  }
+
+  .turno-subtitle {
+    width: 75%;
+  }
+
+  .turno-subtitle,
+  .turno-formTitle {
+    font-size: 1.2rem;
+  }
+
+  .turno-btn {
+    font-size: 1.1rem;
+  }
+
+  /* FINAL DE LOS ESTILOS DEL SOLCITAR TURNO */
   /* COMIENZO DE LOS ESTILOS DE CONTACTO */
 
   .contacto-contenedor {
@@ -889,7 +962,7 @@ svg.show {
 
   /* FINAL DE LOS ESTILOS DE CONTACTO */
 
-    /* COMIENZO DE LOS ESTILOS DE NOSOTROS */
+  /* COMIENZO DE LOS ESTILOS DE NOSOTROS */
 
 
     .nosotros-container {
@@ -971,6 +1044,59 @@ svg.show {
   }
 
   /* FINAL DE LOS ESTILOS DEL FOOTER  */
+}
+
+@media screen and (width <= 550px) {
+  
+  /*COMIENZO DE LOS ESTILOS DEL ENCABEZADO*/
+
+  .encabezado-items {
+    margin: 0 5.5rem 1rem;
+    text-align: center;
+  }
+
+  .svg {
+    height: 2.5em;
+  }
+
+  .aside {
+    width: 100%;
+    right: -100%;
+  }
+
+  /*FINAL DE LOS ESTILOS DEL ENCABEZADO*/
+  /*COMIENZO DE LOS ESTILOS DEL HERO*/
+
+  .hero-boxText {
+    width: 350px;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+  }
+
+  .hero-important {
+    font-size: 1.5rem;
+  }
+  /*FINAL DE LOS ESTILOS DEL HERO*/
+  /*COMIENZO DE LOS ESTILOS DE SOLICITAR TURNO*/
+
+  .turno-title {
+    font-size: 1.5rem;
+  }
+
+  .turno-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .turno-formBox {
+    width: 350px;
+  }
+
+  .turno-input,
+  .turno-select {
+    height: 40px;
+  }
 }
 
 @media screen and (max-width: 425px) {
