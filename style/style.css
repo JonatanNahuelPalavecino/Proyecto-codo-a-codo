@@ -723,6 +723,7 @@
   list-style-type: none;
 }
 
+
 .footer_page {
   background-color: var(--azul);
 }
@@ -730,6 +731,7 @@
 .footer_page .footer_section .fotter_column li a {
   color: #ffffff;
   text-decoration: none;
+  
 }
 
 .footer_section {
@@ -767,13 +769,18 @@
   padding: 0.7rem 0;
 }
 
-.footer_page .social_links a,
-.footer_page .footer_section_social span {
+.footer_page .social_links a , .social_links p,
+.footer_page .footer_section_social p {
+  
   color: #ffffff;
 }
 
-.social_links .social_media_container li a {
+.social_links p .social_media_container li a  {
   font-size: 1.5rem;
+}
+
+.social_links ul li p {
+  list-style-type: none;
 }
 
 .social_media_container {
