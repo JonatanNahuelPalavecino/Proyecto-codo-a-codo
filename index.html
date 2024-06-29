@@ -34,9 +34,12 @@
       defer
       src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
     ></script>
+    <script defer src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+    <script defer src="./scripts/calendar.js"></script>
     <script defer src="./scripts/carrusel.js"></script>
     <script defer src="./scripts/navBar.js"></script>
     <script defer src="./scripts/validacionTurno.js"></script>
+    <script defer src="./scripts/script.js"></script>
     <title>
       CODO AIRE - Un lugar Agradable - Servicio de instalación y matenimiento de
       equipos de aire acondicionado
@@ -61,6 +64,8 @@
             >solicitar turno</a
           >
           <a class="encabezado-items" href="#contacto">contacto</a>
+          <a class="encabezado-items" href="./pages/signin.html">SIGN IN</a>
+          <a class="encabezado-items" href="./pages/signin.html">SIGN UP</a>
         </nav>
 
         <label class="hamburger">
@@ -436,41 +441,41 @@
             Si tenes alguna consulta podes dejarnos tus datos y nos
             contactaremos a la brevedad.
           </h2>
-          <form action="#" class="contacto-formulario-form">
-            <label for="nombre" class="contacto-formulario-label">Nombre</label>
+          <form class="contacto-formulario-form">
+            <label for="nombre-contacto" class="contacto-formulario-label">Nombre</label>
             <input
               class="contacto-formulario-item"
               type="text"
-              name="nombre"
-              id="nombre"
+              name="nombre-contacto"
+              id="nombre-contacto"
               placeholder="Nombre"
             />
-            <label for="telefono" class="contacto-formulario-label"
+            <label for="telefono-contacto" class="contacto-formulario-label"
               >Teléfono</label
             >
             <input
               class="contacto-formulario-item"
               type="tel"
-              name="telefono"
-              id="telefono"
+              name="telefono-contacto"
+              id="telefono-contacto"
               placeholder="Teléfono"
             />
-            <label for="email" class="contacto-formulario-label">Email</label>
+            <label for="email-contacto" class="contacto-formulario-label">Email</label>
             <input
               class="contacto-formulario-item"
               type="email"
-              name="email"
-              id="email"
+              name="email-contacto"
+              id="email-contacto"
               placeholder="Email"
               required
             />
-            <label for="mensaje" class="contacto-formulario-label"
+            <label for="mensaje-contacto" class="contacto-formulario-label"
               >Mensaje</label
             >
             <textarea
               class="contacto-formulario-item contacto-formulario-item-textarea"
-              name="mensaje"
-              id="mensaje"
+              name="mensaje-contacto"
+              id="mensaje-contacto"
               placeholder="Mensaje"
               required
             ></textarea>
@@ -482,22 +487,22 @@
                 class="contacto-radio"
                 type="radio"
                 name="preferencia"
-                id="whatsapp"
+                id="whatsapp-contacto"
                 value="whatsapp"
                 required
               />
-              <label for="whatsapp" class="contacto-radio-label"
+              <label for="whatsapp-contacto" class="contacto-radio-label"
                 >Whatsapp</label
               >
               <input
                 class="contacto-radio"
                 type="radio"
                 name="preferencia"
-                id="mail"
+                id="mail-contacto"
                 value="mail"
                 required
               />
-              <label for="mail" class="contacto-radio-label">Mail</label>
+              <label for="mail-contacto" class="contacto-radio-label">Mail</label>
             </fieldset>
             <button type="submit" class="contacto-formulario-boton">
               <span>Enviar</span>
@@ -542,6 +547,7 @@
         </article>
       </div>
     </section>
+    <div id="calendar"></div>
 
     <!--FOOTER-->
 
@@ -591,6 +597,5 @@
         </div>
       </section>
     </footer>
-    <script src="./scripts/script.js"></script>
   </body>
 </html>
