@@ -20,6 +20,24 @@ const notificar = (mensaje, notificacion) => {
     }).showToast();
 }
 
+const crearTurno = (t) => {
+
+    fetch("http://localhost:3000/create-turno", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(t)
+    })
+    .then(res => res.json())
+    .then((data) => {
+        console.log(data);
+        notificar("Tu turno a sido solicitado de forma exitosa!", "success")
+    })
+    .catch(err => console.log(err))
+
+}
+
 turno.addEventListener("submit", (e) => {
     e.preventDefault()
     
@@ -66,16 +84,32 @@ turno.addEventListener("submit", (e) => {
         let turno = {
             nombre: nombreInput.value.trim(),
             apellido: apellidoInput.value.trim(),
-            telefnono: telefonoInput.value.trim(),
+            telefono: telefonoInput.value.trim(),
             direccion: direccionInput.value.trim(),
-            servicio: servicioInput.value,
-            fecha: servicioInput.value,
-            rangoHorario: horaInput.value
+            service: servicioInput.value,
+            fecha: fechaInput.value,
+            hour: horaInput.value
         }
 
-        notificar("Tu turno a sido solicitado de forma exitosa!", "success")
-
-        console.log(turno);
+        fetch("http://localhost:3000/chequear-turno", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              'access-control-allow-origin': "http://localhost:3000/chequear-turno",
+            },
+            body: JSON.stringify(turno)
+        })
+        .then(res => res.json())
+        .then( (data) => {
+            
+            if (data.exists === true) {
+                return notificar("El turno ya esta tomado, elige otro dia u horario", "error")
+            } else {
+                console.log("Va a entrar a crearTurno");
+                crearTurno(turno)
+            }
+        })
+        .catch(err => console.log(err))
     }
 
 })
