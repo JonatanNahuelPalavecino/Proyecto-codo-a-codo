@@ -34,11 +34,10 @@
       defer
       src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
     ></script>
-    <script defer src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
-    <script defer src="./scripts/calendar.js"></script>
     <script defer src="./scripts/carrusel.js"></script>
     <script defer src="./scripts/navBar.js"></script>
-    <script defer src="./scripts/user.js"></script>
+    <script defer src="./scripts/notificacion.js"></script>
+    <script defer src="./scripts/auth.js"></script>
     <script defer src="./scripts/validacionTurno.js"></script>
     <script defer src="./scripts/script.js"></script>
     <title>
@@ -65,8 +64,6 @@
             >solicitar turno</a
           >
           <a class="encabezado-items" href="#contacto">contacto</a>
-          <a class="encabezado-items" href="./pages/signin.html">SIGN IN</a>
-          <a class="encabezado-items" href="./pages/signin.html">SIGN UP</a>
         </nav>
 
         <label class="hamburger">
@@ -302,7 +299,36 @@
     </section>
 
     <section class="turno" id="solicitar-turno">
-
+      <svg
+        class="turno-wave"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs"
+        width="1440"
+        height="100"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 100"
+      >
+        <g mask='url("#SvgjsMask1135")' fill="none">
+          <rect
+            width="1440"
+            height="100"
+            x="0"
+            y="0"
+            fill="rgba(78, 176, 228, 1)"
+          ></rect>
+          <path
+            d="M 0,21 C 48,36 144,96.2 240,96 C 336,95.8 384,21.4 480,20 C 576,18.6 624,89.6 720,89 C 816,88.4 864,17.6 960,17 C 1056,16.4 1104,83.4 1200,86 C 1296,88.6 1392,41.2 1440,30L1440 100L0 100z"
+            fill="rgba(237, 247, 252, 1)"
+          ></path>
+        </g>
+        <defs>
+          <mask id="SvgjsMask1135">
+            <rect width="1440" height="100" fill="#ffffff"></rect>
+          </mask>
+        </defs>
+      </svg>
     </section>
 
     <section id="contacto">
@@ -419,7 +445,6 @@
         </article>
       </div>
     </section>
-    <div id="calendar"></div>
 
     <!--FOOTER-->
 

@@ -103,49 +103,20 @@ const turnera = `
 
         <button class="turno-btn" type="submit">Solicitar turno</button>
       </form>
-      
-      <svg
-        class="turno-wave"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:svgjs="http://svgjs.dev/svgjs"
-        width="1440"
-        height="100"
-        preserveAspectRatio="none"
-        viewBox="0 0 1440 100"
-      >
-        <g mask='url("#SvgjsMask1135")' fill="none">
-          <rect
-            width="1440"
-            height="100"
-            x="0"
-            y="0"
-            fill="rgba(78, 176, 228, 1)"
-          ></rect>
-          <path
-            d="M 0,21 C 48,36 144,96.2 240,96 C 336,95.8 384,21.4 480,20 C 576,18.6 624,89.6 720,89 C 816,88.4 864,17.6 960,17 C 1056,16.4 1104,83.4 1200,86 C 1296,88.6 1392,41.2 1440,30L1440 100L0 100z"
-            fill="rgba(237, 247, 252, 1)"
-          ></path>
-        </g>
-        <defs>
-          <mask id="SvgjsMask1135">
-            <rect width="1440" height="100" fill="#ffffff"></rect>
-          </mask>
-        </defs>
-      </svg>
+`
+
+const iniciaSesion = `
+    <em class="turno-title">Solicita tu turno</em>
+    <p class="turno-subtitle">
+        Por favor inicia sesion para poder pedir tu turno.
+    </p>
+    <a class="turno-btn" href="../pages/signin.html">Inicia Sesion</a>
 `
 
 if (user.inicioSesion) {
-    section.innerHTML = turnera
+    section.innerHTML = turnera + section.innerHTML
 } else {
-    section.innerHTML = `
-        <em class="turno-title">Solicita tu turno</em>
-        <p class="turno-subtitle">
-            Por favor inicia sesion para poder pedir tu turno.
-        </p>
-        <a class="turno-btn" href="../pages/signin.html">Inicia Sesion</a>
-    `
+    section.innerHTML = iniciaSesion + section.innerHTML
 }
 
 const turno = document.querySelector("#turno")
@@ -156,19 +127,6 @@ const direccionInput = document.querySelector("#address-turno")
 const servicioInput = document.querySelector("#service-turno")
 const fechaInput = document.querySelector("#date-turno")
 const horaInput = document.querySelector("#hour-turno")
-
-const notificar = (mensaje, notificacion) => {
-    Toastify({
-        text: mensaje,
-        duration: 3000,
-        close: true,
-        style : {
-            background: notificacion == "error" ? "#ff0000" : "#008000",
-            borderRadius: "25px",
-            fontFamily: "Roboto, sans-serif"
-        }
-    }).showToast();
-}
 
 const crearTurno = (t) => {
 
