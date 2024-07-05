@@ -125,6 +125,20 @@
   box-shadow: 0 1px 5px black;
 }
 
+.encabezado-authBox {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.encabezado-auth {
+  color: white;
+  font-family: var(--font-roboto);
+  font-weight: bold;
+  padding: 5px;
+  text-decoration: none;
+}
+
 .hamburger {
   display: none;
   cursor: pointer;
@@ -807,6 +821,24 @@
 }
 
 /* FINAL DE LOS ESTILOS DEL FOOTER */
+
+/* INICIO DE LOS ESTILOS DEL SIGN IN */
+
+.signin {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FINAL DE LOS ESTILOS DEL SIGN IN */
+
+/* INICIO DE LOS ESTILOS DEL SIGN UP */
+/* FINAL DE LOS ESTILOS DEL SIGN UP */
+
+
 
 /* MEDIA QUERIES */
 
