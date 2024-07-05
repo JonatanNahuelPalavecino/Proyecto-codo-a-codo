@@ -66,8 +66,8 @@
             >solicitar turno</a -->
           >
           <a class="encabezado-items" href="#contacto">contacto</a>
-          <!-- <a class="encabezado-items" href="../pages/signin.html">Login</a> -->
-          <a class="encabezado-items" href="register.html">Registrar</a>
+          <a class="encabezado-items" href="./signin.html">Login</a>
+          <!-- <a class="encabezado-items" href="register.html">Registrar</a> -->
         </nav>
 
         <label class="hamburger">
@@ -93,15 +93,16 @@
     </header>
 
 
-    <title>Signin</title>
-
-    
-
+    <title>Registrar</title>
     <main>
-        <section class="login">
-            <div class="loginContainer">
-                <form id="loginForm" class="form">
-                    <h2>Login</h2>
+        <section class="register">
+            <div class="registerContainer">
+                <form id="registerForm" class="form">
+                    <h2>Register</h2>
+                    <div class="form-control">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Ingrese su nombre" required>
+                    </div>
                     <div class="form-control">
                         <label for="username">Usuario</label>
                         <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
@@ -110,13 +111,12 @@
                         <label for="password">Contraseña</label>
                         <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
                     </div>
-                    <button type="submit">Login</button>
-                    <p class="form-footer">¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
+                    <button type="submit">Registrar</button>
+                    <p class="form-footer">¿Ya tienes cuenta? <a href="../pages/signin.html">Inicia sesión</a></p>
                 </form>
             </div>
         </section>
     </main>
-
     <footer >
         <p class="footer_2" >© 2024 CodoAires. Todos los derechos reservados.</p>
     </footer>
