@@ -1,68 +1,156 @@
-// const contacto_form = document.querySelector(".contacto-formulario-form");
-// const form_nombre = document.querySelector("#nombre");
-// const form_telefono = document.querySelector("#telefono");
+document.addEventListener("DOMContentLoaded", () => {
+    const btnSubmit = document.querySelector(".contacto-formulario-boton");
 
-// contacto_form.addEventListener("submit", (event) => {
-//   event.preventDefault();
+    if (btnSubmit) {
+        btnSubmit.addEventListener("click", async (e) => {
+            e.preventDefault();
 
-//   form_nombre.value = form_nombre.value.trim();
+            const nombre = document.querySelector("#nombre-contacto").value;
+            const telefono = document.querySelector("#telefono-contacto").value;
+            const email = document.querySelector("#email-contacto").value;
+            const mensaje = document.querySelector("#mensaje-contacto").value;
+            const wpp = document.querySelector("#whatsapp-contacto").checked;
+            const mail = document.querySelector("#mail-contacto").checked;
 
-//   const valida_telefono = Number(form_telefono.value.trim());
+            if (!wpp && !mail) {
+                return notificar("Debes seleccionar una opción de contacto", "error");
+            }
 
-//   if (isNaN(valida_telefono)) {
-//     alert("Asegurate de ingresar sólo números en tu teléfono");
-//   }
-// });
+            const mensajeAEnviar = {
+                nombre,
+                telefono,
+                email,
+                mensaje,
+                opcion_de_contacto: wpp ? "whatsapp" : "mail"
+            };
 
-const btnSubmit = document.querySelector(".contacto-formulario-boton")
+            try {
+                const response = await fetch("http://localhost:3000/contacto", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(mensajeAEnviar)
+                });
 
-btnSubmit.addEventListener("click", (e) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
 
-    e.preventDefault()
+                const data = await response.json();
 
-    let nombre = document.querySelector("#nombre-contacto")
-    let telefono = document.querySelector("#telefono-contacto")
-    let email = document.querySelector("#email-contacto")
-    let mensaje = document.querySelector("#mensaje-contacto")
-    let wpp = document.querySelector("#whatsapp-contacto")
-    let mail = document.querySelector("#mail-contacto")
-
-    if (!wpp.checked && !mail.checked) {
-      return notificar("Debes seleccionar una opcion de contacto", "error")
+                if (data.estado === "Success") {
+                    document.querySelector("#nombre-contacto").value = "";
+                    document.querySelector("#telefono-contacto").value = "";
+                    document.querySelector("#email-contacto").value = "";
+                    document.querySelector("#mensaje-contacto").value = "";
+                    document.querySelector("#whatsapp-contacto").checked = false;
+                    document.querySelector("#mail-contacto").checked = false;
+                    return notificar("Su consulta fue enviada. En breve nos comunicaremos con usted", "success");
+                } else {
+                    throw new Error("Hubo un problema para registrar su consulta.");
+                }
+            } catch (error) {
+                console.error("Hubo un problema con la conexión al servidor:", error);
+                notificar("Hubo un problema con la conexión al servidor. Inténtelo de nuevo más tarde", "error");
+            }
+        });
     }
 
-    const mensajeAEnviar = {
-      nombre: nombre.value,
-      telefono: telefono.value,
-      email: email.value,
-      mensaje: mensaje.value,
-      opcion_de_contacto: wpp.checked ? wpp.value : mail.value
+
+    
+    /*PARA LOGIN Y REGISTRO */
+
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+
+
+    // aca veo para el formulario de login 
+    if (loginForm) {
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+
+                // valores
+            const username = loginForm.username.value;
+            const password = loginForm.password.value;
+
+            // que envia al servidor
+            const data = {
+                username,
+                password
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/api/user/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // mirar si es correcta la respuesta
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const responseData = await response.json();
+
+                if (response.ok) {
+                    alert("Login exitoso");
+                    window.location.href = "../pages/misturnos.html"; 
+                } else {
+                    alert(`Error: ${responseData.message}`);
+                }
+            } catch (error) {
+                console.error("Error al iniciar sesión:", error);
+                alert("Error al iniciar sesión. Por favor, inténtelo de nuevo más tarde");
+            }
+        });
     }
 
-    fetch("http://localhost:3000/contacto", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        'access-control-allow-origin': "http://localhost:3000/contacto",
-      },
-      body: JSON.stringify(mensajeAEnviar)
-    })
-    .then((respuesta) => respuesta.json())
-    .then((data) => {
+        // ahora formulario de registro
+    if (registerForm) {
+        registerForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-      if (data.estado === "Success") {
-        nombre.value = ""
-        telefono.value = ""
-        email.value = ""
-        mensaje.value = ""
-        wpp.checked = false
-        mail.checked = false
-        return notificar("Su consulta fue enviada. En breve nos comunicaremos con usted", "success")
-      }
+            const name = registerForm.name.value;
+            const username = registerForm.username.value;
+            const password = registerForm.password.value;
 
-      notificar("Tuvimos un problema para registrar su consulta. intentelo de nuevo mas tarde", "error")
+            const data = {
+                nombre: name,
+                usuario: username,
+                contrasena: password
+            };
 
-    })
-    .catch(error => console.log("Hubo un problema con la conexion al server: ", error))
+            try {
+                const response = await fetch("http://localhost:3000/api/user", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
 
-})
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const responseData = await response.json();
+
+                if (response.ok) {
+                    alert("Registro exitoso");
+                    window.location.href = "../pages/misturnos.html";  
+                } else {
+                    alert(`Error: ${responseData.message}`);
+                }
+            } catch (error) {
+                console.error("Error al registrar:", error);
+                alert("Error al registrar. Por favor, inténtelo de nuevo más tarde");
+            }
+        });
+    }
+});

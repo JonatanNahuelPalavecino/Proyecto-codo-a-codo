@@ -1,31 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+  />
+  <link rel="stylesheet" href="./style/style.css" />
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+  ></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  <script defer src="./scripts/calendar.js"></script>
+  <!-- <script defer src="./scripts/carrusel.js"></script> -->
+  <script defer src="./scripts/navBar.js"></script>
+  <script defer src="./scripts/user.js"></script>
+  <script defer src="./scripts/validacionTurno.js"></script>
+  <script defer src="./scripts/script.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+ 
+  <title>
+    CODO AIRE - Un lugar Agradable - Servicio de instalación y matenimiento de
+    equipos de aire acondicionado
+  </title>
+ 
 </head>
 <body>
-    <section>
-        <h1>MIS TURNOS</h1>
-        <div>
-            <div>
-                <div>NOMBRE</div>
-                <div>APELLIDO</div>
-                <div>TELEFONO</div>
-                <div>DIRECCION</div>
-                <div>BLA</div>
+    <header class="encabezado">
+        <div id="encabezado" class="encabezado-container">
+          <div class="encabezado-logoBox">
+            <img class="encabezado-img" src="../img/logo.png" alt="logo" />
+            <div class="encabezado-titleBox">
+              <p class="encabezado-title">codo aire</p>
+              <p class="encabezado-subtitle">Un ambiente agradable</p>
             </div>
-            <div>
-                <div>JONATAN</div>
-                <div>PALAVECINO</div>
-                <div>1558836236</div>
-                <div>Tapalque 7210</div>
-                <div>BLA</div>
-                <button>MODIFICAR</button>
-                <button>ELIMINAR</button>
-            </div>
+          </div>
+  
+          <nav class="encabezado-nav">
+            <a class="encabezado-items" href="/">home</a>
+            <a class="encabezado-items" href="#nosotros">nosotros</a>
+            <a class="encabezado-items" href="#servicios">servicios</a>
+            <a class="encabezado-items" href="#solicitar-turno"
+              >solicitar turno</a
+            >
+            <a class="encabezado-items" href="#contacto">contacto</a>
+            <a class="encabezado-items" href="/">Salir</a>
+            <!-- <a class="encabezado-items" href="./pages/register.html">Registrar</a> -->
+          </nav>
+  
+          <label class="hamburger">
+            <svg class="svg" viewBox="0 0 32 32">
+              <path
+                class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              ></path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </label>
+  
+          <aside class="aside">
+            <a class="encabezado-items" href="/">Home</a>
+            <a class="encabezado-items" href="#nosotros">nosotros</a>
+            <a class="encabezado-items" href="#servicios">servicios</a>
+            <a class="encabezado-items" href="#solicitar-turno"
+              >solicitar turno</a
+            >
+            <a class="encabezado-items" href="#contacto">contacto</a>
+          </aside>
         </div>
-    </section>
+      </header>
+    <main class="misturnos-conteiner">
+        <section class="turnos-section-unique">
+            <h1 class="title-misturnos">MIS TURNOS</h1>
+            <div id="turnos-container-unique">
+                <div class="turno-header-unique">
+                    <div>NOMBRE</div>
+                    <div>APELLIDO</div>
+                    <div>TELÉFONO</div>
+                    <div>DIRECCIÓN</div>
+                    <div>DETALLES</div>
+                    <div>ACCIONES</div>
+                </div>
+                <div class="turno-unique">
+                    <div>Carlos</div>
+                    <div>García</div>
+                    <div>1551234567</div>
+                    <div>Avenida Cabildo 3000</div>
+                    <div>de 9 a 13hs</div>
+                    <div>Instalación Profesional</div>
+                </div>
+                <div class="turno-unique">
+                    <div>Ana</div>
+                    <div>Rodríguez</div>
+                    <div>1559876543</div>
+                    <div>Avenida Corrientes 1450</div>
+                    <div>Whatsapp</div>
+                    <div>Mantenimiento Preventivo</div>
+                </div>
+                <div class="turno-unique">
+                    <div>José</div>
+                    <div>Martínez</div>
+                    <div>1556543210</div>
+                    <div>Calle Florida 500</div>
+                    <div>de 9 a 13hs</div>
+                    <div>Asesoramiento Profesional</div>
+                </div>
+                <div class="turno-unique">
+                    <div>María</div>
+                    <div>López</div>
+                    <div>1591234567</div>
+                    <div>Avenida Santa Fe 2300</div>
+                    <div>de 14 a 18hs</div>
+                    <div>Instalación Profesional</div>
+                </div>
+                <div class="turno-unique">
+                    <div>Juan</div>
+                    <div>González</div>
+                    <div>1599876543</div>
+                    <div>Calle Lavalle 600</div>
+                    <div>de 9 a 13hs</div>
+                    <div>Mantenimiento Preventivo</div>
+                </div>
+                <div class="botones-unique">
+                    <button class="modificar-btn-unique">MODIFICAR</button>
+                    <button class="eliminar-btn-unique">ELIMINAR</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer >
+        <p class="footer_2" >© 2024 CodoAires. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
