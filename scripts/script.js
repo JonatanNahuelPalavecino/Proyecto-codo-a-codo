@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             try {
-                const response = await fetch("http://localhost:3000/contacto", {
+                const response = await fetch("http://localhost:3001/contacto", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -40,13 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
 
                 if (data.estado === "Success") {
+                    // Limpiar los campos del formulario después del envío exitoso
                     document.querySelector("#nombre-contacto").value = "";
                     document.querySelector("#telefono-contacto").value = "";
                     document.querySelector("#email-contacto").value = "";
                     document.querySelector("#mensaje-contacto").value = "";
                     document.querySelector("#whatsapp-contacto").checked = false;
                     document.querySelector("#mail-contacto").checked = false;
-                    return notificar("Su consulta fue enviada. En breve nos comunicaremos con usted", "success");
+                    notificar("Su consulta fue enviada. En breve nos comunicaremos con usted", "success");
                 } else {
                     throw new Error("Hubo un problema para registrar su consulta.");
                 }
@@ -57,32 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
-    
-    /*PARA LOGIN Y REGISTRO */
-
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
 
-
-    // aca veo para el formulario de login 
     if (loginForm) {
         loginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-
-                // valores
             const username = loginForm.username.value;
             const password = loginForm.password.value;
 
-            // que envia al servidor
             const data = {
                 username,
                 password
             };
 
             try {
-                const response = await fetch("http://localhost:3000/api/user/login", {
+                const response = await fetch("http://localhost:3001/auth/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -90,19 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify(data)
                 });
 
-                // mirar si es correcta la respuesta
-
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
 
                 const responseData = await response.json();
 
-                if (response.ok) {
+                if (responseData.exito) {
                     alert("Login exitoso");
+                    // Redireccionar a la página deseada después del login exitoso
                     window.location.href = "../pages/misturnos.html"; 
                 } else {
-                    alert(`Error: ${responseData.message}`);
+                    alert(`Error: ${responseData.mensaje}`);
                 }
             } catch (error) {
                 console.error("Error al iniciar sesión:", error);
@@ -111,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-        // ahora formulario de registro
     if (registerForm) {
         registerForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -127,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             try {
-                const response = await fetch("http://localhost:3000/api/user", {
+                const response = await fetch("http://localhost:3001/auth/register", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -141,11 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const responseData = await response.json();
 
-                if (response.ok) {
+                if (responseData.exito) {
                     alert("Registro exitoso");
+                    // Redireccionar a la página deseada después del registro exitoso
                     window.location.href = "../pages/misturnos.html";  
                 } else {
-                    alert(`Error: ${responseData.message}`);
+                    alert(`Error: ${responseData.mensaje}`);
                 }
             } catch (error) {
                 console.error("Error al registrar:", error);

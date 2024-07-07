@@ -130,7 +130,7 @@ const horaInput = document.querySelector("#hour-turno")
 
 const crearTurno = (t) => {
 
-    fetch("http://localhost:3000/create-turno", {
+    fetch("http://localhost:3001/create-turno", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -203,7 +203,7 @@ turno.addEventListener("submit", (e) => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              'access-control-allow-origin': "http://localhost:3000/chequear-turno",
+              'access-control-allow-origin': "http://localhost:3001/chequear-turno",
             },
             body: JSON.stringify(turno)
         })
