@@ -127,16 +127,30 @@
 
 .encabezado-authBox {
   position: absolute;
-  right: 0;
-  top: 5px;
+  right: 5px;
+  top: 10px;
 }
 
-.encabezado-auth {
+.encabezado-auth, .encabezado-text {
   color: white;
   font-family: var(--font-roboto);
   font-weight: bold;
   padding: 5px;
   text-decoration: none;
+  transition: color .5s ease-in-out;
+}
+
+.encabezado-auth:hover {
+  color: var(--amarillo);
+}
+
+.encabezado-signOut {
+  background-color: #d61111;
+  color: white;
+  font-family: var(--font-oswald);
+  border: none;
+  border-radius: 25px;
+  padding: .2rem .5rem;
 }
 
 .hamburger {
@@ -831,12 +845,300 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.signin-title {
+  font-family: var(--font-roboto);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.signin-form, .signin-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin-form {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .2);
+  box-shadow: -1px 1px 5px black;
+}
+
+.signin-label {
+  font-family: var(--font-oswald);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: 0 0 .5rem 0;
+}
+
+.signin-input {
+  width: 250px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  box-shadow: inset 0 -1px 4px black;
+  padding: 0 1rem;
+  margin: .5rem 0;
+  transition: all 1s ease;
+  font-family: var(--font-roboto);
+}
+
+.signin-input:focus {
+  box-shadow: var(--sombra-basica);
+}
+
+.signin-btn {
+  font-family: var(--font-roboto);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: var(--celeste);
+  border: none;
+  border-radius: 25px;
+  box-shadow: var(--sombra-basica);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.signin-btn:hover {
+  box-shadow: 0 2px 3px black;
+  transform: translateY(-0.1em);
+}
+
+.signin-text {
+  font-family: var(--font-oswald);
+  font-size: 1.1rem;
+  margin: 1rem 0 0;
+}
+
+.signin-text a{
+  color: white;
+  text-decoration: none;
+  text-shadow: -1px 1px 15px var(--amarillo);
+}
+
+.signin-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
 }
 
 /* FINAL DE LOS ESTILOS DEL SIGN IN */
 
 /* INICIO DE LOS ESTILOS DEL SIGN UP */
+
+.signup {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.signup-title {
+  font-family: var(--font-roboto);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.signup-form, .signup-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .2);
+  box-shadow: -1px 1px 5px black;
+}
+
+.signup-label {
+  font-family: var(--font-oswald);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: 0 0 .5rem 0;
+}
+
+.signup-input {
+  width: 250px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  box-shadow: inset 0 -1px 4px black;
+  padding: 0 1rem;
+  margin: .5rem 0;
+  transition: all 1s ease;
+  font-family: var(--font-roboto);
+}
+
+.signup-input:focus {
+  box-shadow: var(--sombra-basica);
+}
+
+.signup-btn {
+  font-family: var(--font-roboto);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: var(--celeste);
+  border: none;
+  border-radius: 25px;
+  box-shadow: var(--sombra-basica);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.signup-btn:hover {
+  box-shadow: 0 2px 3px black;
+  transform: translateY(-0.1em);
+}
+
+.signup-text {
+  font-family: var(--font-oswald);
+  font-size: 1.1rem;
+  margin: 1rem 0 0;
+}
+
+.signup-text a{
+  color: white;
+  text-decoration: none;
+  text-shadow: -1px 1px 15px var(--amarillo);
+}
+
+.signup-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+
 /* FINAL DE LOS ESTILOS DEL SIGN UP */
+
+/* INICIO DE LOS ESTILOS DEL MIS TURNOS */
+
+.misturnos-conteiner {
+  display: flex;
+  margin-bottom: 60px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.turnos-section-unique {
+  max-width: 1000px;
+  width: 100%;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--sombra-basica);
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.title-misturnos {
+  font-family: var(--font-roboto);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.turno-header-unique {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--fondo-uno);
+  border-radius: 8px;
+  color: white;
+}
+
+.turno-unique {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid var(--azul);
+  border-radius: 8px;
+  margin-top: 10px;
+  color: var(--azul);
+}
+
+.turno-unique > div {
+  text-align: center;
+}
+
+.botones-unique {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modificar-btn-unique,
+.eliminar-btn-unique {
+  padding: 5px 15px;
+  background-color: var(--azul);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modificar-btn-unique:hover,
+.eliminar-btn-unique:hover {
+  background-color: var(--celeste);
+}
+
+/* FINAL DE LOS ESTILOS DEL MIS TURNOS */
 
 
 
