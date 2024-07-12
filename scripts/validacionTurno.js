@@ -205,11 +205,11 @@ const initializeForm = () => {
                 hour: horaInput.value
             }
     
-            fetch("http://localhost:3000/chequear-turno", {
+            fetch("http://grupo-uno.alwaysdata.net/chequear-turno", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
-                  'access-control-allow-origin': "http://localhost:3000/chequear-turno",
+                  'access-control-allow-origin': "http://grupo-uno.alwaysdata.net/chequear-turno",
                 },
                 body: JSON.stringify(turno)
             })

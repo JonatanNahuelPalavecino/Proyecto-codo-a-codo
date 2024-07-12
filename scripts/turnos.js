@@ -17,11 +17,11 @@ const turno = `
 `
 
 if (id) {
-    fetch("http://localhost:3000/ver-turnos", {
+    fetch("http://grupo-uno.alwaysdata.net/ver-turnos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'access-control-allow-origin': "http://localhost:3000/ver-turnos",
+          'access-control-allow-origin': "http://grupo-uno.alwaysdata.net/ver-turnos",
         },
         body: JSON.stringify({id})
     })

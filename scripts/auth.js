@@ -7,7 +7,7 @@ const verifyToken =  (user) => {
         return
     }
     
-     fetch("http://localhost:3000/auth/protected", {
+     fetch("http://grupo-uno.alwaysdata.net/auth/protected", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -71,11 +71,11 @@ btnSignUp && btnSignUp.addEventListener("click", (e) => {
         password: pass.value
     }
 
-    fetch("http://localhost:3000/auth/register", {
+    fetch("http://grupo-uno.alwaysdata.net/auth/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            'access-control-allow-origin': "http://localhost:3000/auth/register",
+            'access-control-allow-origin': "http://grupo-uno.alwaysdata.net/auth/register",
         },
         body: JSON.stringify(usuario)
     })
@@ -104,11 +104,11 @@ btnSignIn && btnSignIn.addEventListener("click", (e) => {
         password: pass.value
     }
 
-    fetch("http://localhost:3000/auth/login", {
+    fetch("http://grupo-uno.alwaysdata.net/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            'access-control-allow-origin': "http://localhost:3000/auth/login",
+            'access-control-allow-origin': "http://grupo-uno.alwaysdata.net/auth/login",
         },
         body: JSON.stringify(usuario)
     })

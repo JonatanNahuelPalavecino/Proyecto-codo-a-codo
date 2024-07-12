@@ -23,11 +23,11 @@ btnSubmit.addEventListener("click", (e) => {
       opcion_de_contacto: wpp.checked ? wpp.value : mail.value
     }
 
-    fetch("http://localhost:3000/contacto", {
+    fetch("http://grupo-uno.alwaysdata.net/contacto", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        'access-control-allow-origin': "http://localhost:3000/contacto",
+        'access-control-allow-origin': "http://grupo-uno.alwaysdata.net/contacto",
       },
       body: JSON.stringify(mensajeAEnviar)
     })
